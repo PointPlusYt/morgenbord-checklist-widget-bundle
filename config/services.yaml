@@ -1,0 +1,5 @@
+services:
+    register_checklist_widget.listener:
+        class: MorgenBord\ChecklistWidgetBundle\ChecklistWidgetParameters
+        tags:
+            - { name: kernel.event_listener, event: morning_bord.register_widget }

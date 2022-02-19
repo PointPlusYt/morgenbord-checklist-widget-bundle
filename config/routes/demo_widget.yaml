@@ -1,0 +1,3 @@
+checklist_widget_controllers:
+    resource: '@ChecklistWidgetBundle/Controller/'
+    type: annotation
