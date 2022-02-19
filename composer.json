@@ -1,5 +1,5 @@
 {
-    "name": "morgenbord/list-widget-bundle",
+    "name": "morgenbord/checklist-widget-bundle",
     "description": "Widget that creates checklists for MorgenBord",
     "minimum-stability": "stable",
     "license": "MIT",
