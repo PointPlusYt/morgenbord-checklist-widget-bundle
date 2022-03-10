@@ -1,4 +1,12 @@
 services:
+    _defaults:
+            autowire: true
+            autoconfigure: true
+
+    MorgenBord\ChecklistWidgetBundle\:
+        resource: '../src/'
+    
+    # Declare event listeners that declare widgets
     register_checklist_widget.listener:
         class: MorgenBord\ChecklistWidgetBundle\ChecklistWidgetParameters
         tags:

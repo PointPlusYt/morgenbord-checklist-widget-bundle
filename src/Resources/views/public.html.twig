@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="widget-box col-span-12 max-w-md">
+    <component :is="Checklist" title="{{ userWidget.parameters.name }}" widget-id="{{ userWidget.id }}"></component>
+</div>
+{% endblock %}

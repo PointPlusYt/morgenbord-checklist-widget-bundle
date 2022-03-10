@@ -2,7 +2,8 @@
 <div>
     {{title}}&nbsp;
     <span @click="updateList"><i class="fa fa-refresh" aria-hidden="true"></i></span>&nbsp;
-    <span @click="showAddForm"><i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
+    <span @click="showAddForm"><i class="fa fa-plus-square-o" aria-hidden="true"></i></span>&nbsp;
+    <span @click="copyShareLink"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
 </div>
 <form class="hidden" :id="`checklist_add_form_${widgetId}`" @submit="addItem">
     <input type="text" :id="`checklist_add_input_${widgetId}`">
@@ -45,6 +46,9 @@ export default {
             });
 
             this.putData();
+        },
+        copyShareLink() {
+            navigator.clipboard.writeText(window.location.href + 'checklist/' + this.widgetId);
         },
         deleteItem(evt) {
             console.log(evt, evt.target.dataset.index);
