@@ -2,7 +2,7 @@
 
 namespace MorgenBord\ChecklistWidgetBundle\Controller;
 
-use App\Entity\UserWidget;
+use MorgenBord\CoreBundle\Entity\UserWidget;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
