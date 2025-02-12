@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\ChecklistWidgetBundle\DependencyInjection;
+namespace Morgenbord\ChecklistWidgetBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

@@ -1,10 +1,10 @@
 <?php
 
-namespace MorgenBord\ChecklistWidgetBundle;
+namespace Morgenbord\ChecklistWidgetBundle;
 
-use MorgenBord\CoreBundle\Entity\Widget;
-use MorgenBord\CoreBundle\Event\RegisterWidgetEvent;
-use MorgenBord\CoreBundle\Interfaces\ParametersFormTypeInterface;
+use Morgenbord\CoreBundle\Entity\Widget;
+use Morgenbord\CoreBundle\Event\RegisterWidgetEvent;
+use Morgenbord\CoreBundle\Interfaces\ParametersFormTypeInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 

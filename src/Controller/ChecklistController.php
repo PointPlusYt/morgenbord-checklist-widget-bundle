@@ -1,8 +1,8 @@
 <?php
 
-namespace MorgenBord\ChecklistWidgetBundle\Controller;
+namespace Morgenbord\ChecklistWidgetBundle\Controller;
 
-use MorgenBord\CoreBundle\Entity\UserWidget;
+use Morgenbord\CoreBundle\Entity\UserWidget;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

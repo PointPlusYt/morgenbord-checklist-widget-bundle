@@ -1,6 +1,6 @@
 {
     "name": "morgenbord/checklist-widget-bundle",
-    "description": "Widget that creates checklists for MorgenBord",
+    "description": "Widget that creates checklists for Morgenbord",
     "minimum-stability": "stable",
     "license": "MIT",
     "type": "symfony-bundle",
@@ -15,7 +15,7 @@
     },
     "autoload": {
       "psr-4": {
-        "MorgenBord\\ChecklistWidgetBundle\\": "src/"
+        "Morgenbord\\ChecklistWidgetBundle\\": "src/"
       }
     },
     "require-dev": {

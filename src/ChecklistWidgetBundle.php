@@ -1,6 +1,6 @@
 <?php
 
-namespace MorgenBord\ChecklistWidgetBundle;
+namespace Morgenbord\ChecklistWidgetBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

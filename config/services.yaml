@@ -3,11 +3,11 @@ services:
             autowire: true
             autoconfigure: true
 
-    MorgenBord\ChecklistWidgetBundle\:
+    Morgenbord\ChecklistWidgetBundle\:
         resource: '../src/'
     
     # Declare event listeners that declare widgets
     register_checklist_widget.listener:
-        class: MorgenBord\ChecklistWidgetBundle\ChecklistWidgetParameters
+        class: Morgenbord\ChecklistWidgetBundle\ChecklistWidgetParameters
         tags:
             - { name: kernel.event_listener, event: morning_bord.register_widget }
