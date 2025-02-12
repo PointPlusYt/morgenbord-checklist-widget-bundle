@@ -2,7 +2,7 @@
     "name": "morgenbord/checklist-widget-bundle",
     "description": "Widget that creates checklists for Morgenbord",
     "minimum-stability": "stable",
-    "license": "MIT",
+    "license": "AGPL-3.0-or-later",
     "type": "symfony-bundle",
     "authors": [
       {
