@@ -1,3 +1,4 @@
 checklist_widget_controllers:
-    resource: '@ChecklistWidgetBundle/Controller/'
-    type: annotation
+    resource: '@MorgenbordChecklistWidgetBundle/Controller/'
+    type: attribute
+    name_prefix: 'checklist_widget_'
