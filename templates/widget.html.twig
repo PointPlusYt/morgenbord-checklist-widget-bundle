@@ -1,1 +1,3 @@
-<component :is="Checklist" title="{{ widget.parameters.name }}" widget-id="{{ widget.id }}"></component>
+<div id="checklist-widget-{{ widget.id }}">
+    <div {{ vue_component('bundles/morgenbordchecklistwidget/Checklist', { 'title': widget.parameters.name, 'widgetId': widget.id }) }}></div>
+</div>

@@ -8,11 +8,11 @@ use Morgenbord\CoreBundle\Interfaces\ParametersFormTypeInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class ChecklistWidgetParameters implements ParametersFormTypeInterface
+class MorgenbordChecklistWidgetParameters implements ParametersFormTypeInterface
 {
     public const WIDGET_NAME = 'Checklist';
     public const WIDGET_SHORT_NAME = 'checklist_widget';
-    public const TWIG_FILE = '@ChecklistWidget/widget.html.twig';
+    public const TWIG_FILE = '@MorgenbordChecklistWidget/widget.html.twig';
 
     public function onMorningBordRegisterWidget(RegisterWidgetEvent $event)
     {
@@ -20,7 +20,7 @@ class ChecklistWidgetParameters implements ParametersFormTypeInterface
         $widget->setName(self::WIDGET_NAME);
         $widget->setShortName(self::WIDGET_SHORT_NAME);
         $widget->setTwigFile(self::TWIG_FILE);
-        $widget->setParameterFormFqcn(ChecklistWidgetBundle::class);
+        $widget->setParameterFormFqcn(MorgenbordChecklistWidgetBundle::class);
         
         $event->addWidget($widget);
     }

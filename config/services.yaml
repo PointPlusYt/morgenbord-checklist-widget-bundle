@@ -8,6 +8,6 @@ services:
     
     # Declare event listeners that declare widgets
     register_checklist_widget.listener:
-        class: Morgenbord\ChecklistWidgetBundle\ChecklistWidgetParameters
+        class: Morgenbord\ChecklistWidgetBundle\MorgenbordChecklistWidgetParameters
         tags:
             - { name: kernel.event_listener, event: morning_bord.register_widget }
