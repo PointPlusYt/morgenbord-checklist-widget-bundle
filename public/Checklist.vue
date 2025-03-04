@@ -1,6 +1,6 @@
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, nextTick, onMounted } from 'vue';
 
 const props = defineProps({
     title: String,
@@ -8,14 +8,19 @@ const props = defineProps({
 });
 
 const list = ref([]);
+let addFormshow = ref(false);
+const addFormInput = ref(null);
+const addFormToggle = () => {
+    addFormshow.value = !addFormshow.value;
+    if (addFormshow.value) {
+        nextTick(() => addFormInput.value?.focus());
+    }
+};
 
 const addItem = (evt) => {
-    evt.preventDefault();
-    
-    evt.target.classList.add('hidden');
-    
-    let text = evt.target.querySelector('input').value;
-    evt.target.querySelector('input').value = '';
+    addFormshow.value = false;
+    let text = addFormInput.value.value;
+    addFormInput.value.value = '';
     
     list.value.push({
         text: text,
@@ -44,12 +49,6 @@ const putData = () => {
         },
         body: JSON.stringify(list.value),
     });
-};
-
-const showAddForm = () => {
-    let form = document.querySelector(`#checklist_add_form_${props.widgetId}`);
-    form.classList.remove('hidden');
-    form.querySelector('input').focus();
 };
 
 const toggleChecked = (evt) => {
@@ -81,7 +80,7 @@ onMounted(() => {
 
 <template>
 <div class="flex justify-around items-center">
-    <ul class="menu menu-horizontal bg-base-200 rounded-box">
+    <ul class="menu menu-xs menu-horizontal bg-base-200 rounded-box">
         <li @click="updateList">
             <a>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
@@ -89,7 +88,7 @@ onMounted(() => {
                 </svg>
             </a>
         </li>
-        <li @click="showAddForm">
+        <li @click="addFormToggle">
             <a>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -105,15 +104,12 @@ onMounted(() => {
         </li>
     </ul>
 </div>
-<form class="hidden" :id="`checklist_add_form_${props.widgetId}`" @submit="addItem">
-    <input type="text" :id="`checklist_add_input_${props.widgetId}`" class="input">
-    <button class="btn btn-primary">Add</button>
-
+<form v-show="addFormshow" :id="`checklist_add_form_${props.widgetId}`" @submit.prevent="addItem">
     <div class="join">
             <label class="input join-item">
-            <input type="text" :id="`checklist_add_input_${props.widgetId}`" placeholder="Something to do" required/>
+            <input ref="addFormInput" type="text" :id="`checklist_add_input_${props.widgetId}`" placeholder="Something to do" required />
             </label>
-        <button class="btn btn-neutral join-item">Add</button>
+        <button type="submit" class="btn btn-neutral join-item">Add</button>
     </div>
 </form>
 <ul class="list-none">
